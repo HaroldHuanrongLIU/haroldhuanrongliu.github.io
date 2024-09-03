@@ -35,8 +35,8 @@
   display: flex;
   justify-content: center;
   align-self: center;
-  max-width: 220px;
-  max-height: 220px;
+  max-width: 330px;
+  max-height: 330px;
   overflow: hidden;
   border-radius: 50%;
       border: 5px solid #FFF;
