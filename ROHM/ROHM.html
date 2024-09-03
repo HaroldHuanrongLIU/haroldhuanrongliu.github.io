@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="RoHM is a diffusion-based approach for robust 3D human motion reconstruction from monocular RGB(-D) videos in the presence of noise and occlusions.">
+       <meta name="keywords" content="3D human motion reconstruction; motion prior; diffusion; 3D human pose estimation; human mesh recovery; deep learning; 3D vision; computer vision;">
+      <meta name="author" content="Siwei Zhang">
+      <title>RoHM: Robust Human Motion Reconstruction via Diffusion</title>
+
+      <meta property="og:title" content="RoHM" />
+      <meta property="og:description" content="RoHM is a diffusion-based approach for robust 3D human motion reconstruction from monocular RGB(-D) videos in the presence of noise and occlusions">
+      <meta property="og:image" content="images/rohm.jpg" />
+
+      <!--<meta name="twitter:card" content="summary_large_image" />-->
+      <meta name="twitter:title" content="RoHM" />
+      <meta name="twitter:description" content="EgoHMR is a novel scene-conditioned probabilistic method to recover the human mesh from an egocentric view image (typically with the body truncated) in the 3D environment." />
+      <meta name="twitter:image" content="images/rohm.jpg" />
+      <!--<meta name="twitter:image:alt" content="EgoBody" />-->
+
+      <!-- Bootstrap core CSS -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- Custom styles for this template -->
+      <link href="css/scrolling-nav.css" rel="stylesheet">
+       <link href="css/hr.css" rel="stylesheet" >
+      <!-- nice figures  -->
+<!--      <link rel="stylesheet" href="css/font-awesome.css">-->
+<!--      <link rel="icon" type="image/jpg" href="images/egobody_logo1.jpg">-->
+<!--       <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129445</text></svg>">-->
+
+   </head>
+   <body id="page-top">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">RoHM</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                  </li>
+                   <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#results">Results</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#video">Video</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#citation">Citation</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+
+
+      <header class="bg-light text-black">
+          <div class="container text-center">
+              <h1><font color="#1772d0 ">RoHM</font></h1>
+              <h2><font color="#7AAEE4 "><b>Robust Human Motion Reconstruction via Diffusion</b></font></h2><br>
+              <div id="content">
+          <div id="content-inner">
+
+            <div class="section head">
+
+                <div class="authors">
+                    <h5>
+                        <a href="https://sanweiliti.github.io/">Siwei Zhang</a><sup>1, 2*</sup>&nbsp;
+                        <a href="https://virtualhumans.mpi-inf.mpg.de/people/Bhatnagar.html">Bharat Lal Bhatnagar</a><sup>2</sup>&nbsp;
+                        <a href="https://web.cs.ucla.edu/~yuanluxu/">Yuanlu Xu</a><sup>2</sup>&nbsp;
+                        <a href="https://alex-winkler.com/">Alexander Winkler</a><sup>2</sup>&nbsp;
+                        <a href="https://scholar.google.com/citations?user=V_qztpEAAAAJ&hl=en">Petr Kadlecek</a><sup>2</sup>&nbsp;
+                        <a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html">Siyu Tang</a><sup>1</sup>
+                        <a href="https://fbogo.github.io/">Federica Bogo</a><sup>2</sup>&nbsp;
+                        <h5>
+                </div>
+
+                <div class="affiliations">
+                    <h5>
+                        <sup>1</sup><a href="https://ethz.ch/en.html">ETH Zürich</a>&nbsp; &nbsp;&nbsp;
+                        <sup>2</sup><a href="https://about.meta.com/realitylabs/">Reality Labs Research, Meta</a> &nbsp;&nbsp;
+                        <h5>
+                </div>
+
+                <div class="affiliations">
+                    <h6>
+                        * The work was done during an internship at Meta.  <br>
+                        <h6>
+                </div>
+
+                <div class="venue"><h5>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (<a href="https://cvpr.thecvf.com/" target="_blank">CVPR</a>) 2024<h5></div>
+                <div class="venue"><h5> <font color="#EE0303 "><b>Oral Presentation </b></font> <h5></div>
+
+                <br>
+                <div class="downloads">
+                    <h4>
+                        <div class="box">
+                            <a href="https://arxiv.org/abs/2401.08570"><i class="fa fa-print"></i> arXiv</a>
+                        </div>
+                        <div class="box">
+                            <a href="https://github.com/sanweiliti/RoHM"><i class="fa fa-github"></i> Code</a>
+                        </div>
+<!--                    <a class="publink" href="https://arxiv.org/pdf/xxxx.pdf" target="_blank" style="text-decoration: none"> PDF <i class="fa fa-print"></i></a> &nbsp;-->
+<!--                    <a class="publink" href="https://github.com/sanweiliti/xxxx" target="_blank" style="text-decoration: none"> Code <i class="fa fa-github"></i></a>-->
+                    <h4>
+                </div>
+            </div>
+
+        </div>
+      </header>
+
+
+      <section id="about" class="about-section">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                   <video width="100%" controls muted loop autoplay>
+                       <source src="video/results_prox_rgbd_init_full.mp4" type="video/mp4">
+                   </video>
+                   <h5 class="img-wide text-center">
+                        <br>
+                        Conditioned on <b>noisy and occluded</b> input data, RoHM reconstructs complete,
+                        plausible motions in <b>consistent global coordinates</b> for both
+                        <font color="#A4D7FA">visible</font> and <font color="#F7E129">occluded</font> joints,
+                        predicting whether feet are <font color="#039F1B">in contact</font> or <font color="#C80606">not</font>
+                            with the ground for improved physical plausibility.
+                  <h5>
+                   <br><br><br>
+                   <h2>Abstract</h2>
+                   <div class="text-center">
+                       <p class="lead text-justify">
+                           We propose RoHM, an approach for robust 3D human motion reconstruction from monocular RGB(-D) videos
+                           in the presence of noise and occlusions.
+                           Most previous approaches either train neural networks to directly regress motion in 3D or learn data-driven
+                           motion priors and combine them with optimization at test time. The former do not recover globally coherent
+                           motion and fail under occlusions; the latter are time-consuming, prone to local minima, and require manual
+                           tuning. To overcome these shortcomings, we exploit the iterative, denoising nature of diffusion models.
+                           RoHM is a novel diffusion-based motion model that, conditioned on noisy and occluded input data, reconstructs
+                           complete, plausible motions in consistent global coordinates. Given the complexity of the problem --
+                           requiring one to address different tasks (denoising and infilling) in different solution spaces
+                           (local and global motion) -- we decompose it into two sub-tasks and learn two models, one for global
+                           trajectory and one for local motion. To capture the correlations between the two, we then introduce a
+                           novel conditioning module, combining it with an iterative inference scheme. We apply RoHM to a variety of tasks
+                           -- from motion reconstruction and denoising to spatial and temporal infilling. Extensive experiments on three
+                           popular datasets show that our method outperforms state-of-the-art approaches qualitatively and quantitatively,
+                           while being faster at test time.
+                  </p>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <section id="results" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                   <h2>Motion denoising, infilling and in-between</h2>
+                       <p class="lead text-justify">
+                           Here we present the results on AMASS dataset for motion denoising, infilling and in-between.
+                           Synthetic gaussian noise is added to the input body, with uppder body visible
+                           (<font color="#A4D7FA">blue joints</font>) and lower body masked out
+                           (<font color="#F7E129">yellow joints</font>) for all frames.
+                           Also, accurate foot-ground contact labels are predicted (<font color="#039F1B">in contact</font>
+                           or <font color="#C80606">not</font>).
+                       </p>
+                       <video width="100%" controls muted loop autoplay>
+                           <source src="video/infill_lower_body.mp4" type="video/mp4">
+                       </video>
+
+                       <p class="lead text-justify">
+                           Besides motion infilling, our method also enables motion in-between for the full body
+                           with noisy input, when a certain percentage of the input frames are masked out
+                           (<font color="#F7E129">yellow frames</font>).
+                       </p>
+                       <video width="100%" controls muted loop autoplay>
+                           <source src="video/infill_full_body.mp4" type="video/mp4">
+                       </video>
+               </div>
+            </div>
+         </div>
+      </section>
+
+<!--      <section id="method" class="">-->
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                   <h2>Motion Reconstruction from RGB(-D) videos</h2>
+                       <p class="lead text-justify">
+                           Our method also reconstructs realistic motions from real-life video input from:
+                       </p>
+                       <p class="lead text-justify">
+                           RGBD video from PROX dataset:
+                       </p>
+                       <video width="100%" controls muted loop autoplay>
+                           <source src="video/results_prox_rgbd_init_full_with_humor.mp4" type="video/mp4">
+                       </video>
+
+                       <p class="lead text-justify">
+                           <br>
+                           RGB video from PROX dataset:
+                       </p>
+                       <video width="100%" controls muted loop autoplay>
+                           <source src="video/results_prox_rgb_with_phasemp.mp4" type="video/mp4">
+                       </video>
+
+                       <p class="lead text-justify">
+                           <br>
+                           RGB video from EgoBody dataset:
+                       </p>
+                       <video width="100%" controls muted loop autoplay>
+                           <source src="video/results_egobody_rgb.mp4" type="video/mp4">
+                       </video>
+               </div>
+            </div>
+         </div>
+<!--      </section>-->
+
+
+
+      <section id="video" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Video</h2>
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/hX7yO2c1hEE" title="Probabilistic Human Mesh Recovery in 3D Scenes from Egocentric Views" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!--                    <iframe class="embed-responsive-item" src="video/video.mp4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+      <section id="citation" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+                  <h2 class="section-title-tc">Citation</h2>
+                  <br>
+                  <a class="publink" target="_blank" href="https://arxiv.org/abs/2401.08570"><b>
+                    RoHM: Robust Human Motion Reconstruction via Diffusion </b><br></a>
+                    Siwei Zhang, Bharat Lal Bhatnagar, Yuanlu Xu, Alexander Winkler, Petr Kadlecek, Siyu Tang, Federica Bogo<br>
+                  <br><br>
+                    <pre style="display: block; background-color: #f5f5f5; border: 1px solid #ccc; border-radius: 4px">
+ @inproceedings{zhang2024rohm,
+  title={RoHM: Robust Human Motion Reconstruction via Diffusion},
+  author={Zhang, Siwei and Bhatnagar, Bharat Lal and Xu, Yuanlu and Winkler, Alexander and Kadlecek, Petr and Tang, Siyu and Bogo, Federica},
+  booktitle={CVPR},
+  year={2024}
+}</pre>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+
+      <section id="team" class="team-section">
+         <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="section-title-tc">Team</h2>
+                        <div class="text-center">
+                         <table>
+                               <tr>
+                                   <th> <img src="images/teams/siwei.jpg" width="130" height="130" border="0">  </th>
+                                   <th> <img src="images/teams/bharat.jpg" width="130" height="130" border="0">  </th>
+                                   <th> <img src="images/teams/yuanlu.jpg" width="130" height="130" border="0">  </th>
+                                   <th> <img src="images/teams/alex.jpg" width="130" height="130" border="0">  </th>
+                                   <th> <img src="images/teams/petr.jpg" width="130" height="130" border="0">  </th>
+                                   <th> <img src="images/teams/siyu.jpg" width="130" height="130" border="0"> </th>
+                                   <th> <img src="images/teams/federica.jpg" width="130" height="130" border="0">  </th>
+                               </tr>
+
+                               <tr>
+                                   <td> <a href="https://sanweiliti.github.io/">Siwei Zhang</a> </td>
+                                   <td> <a href="https://virtualhumans.mpi-inf.mpg.de/people/Bhatnagar.html">Bharat Lal Bhatnagar</a> </td>
+                                   <td> <a href="https://web.cs.ucla.edu/~yuanluxu/">Yuanlu Xu</a> </td>
+                                   <td> <a href="https://alex-winkler.com/">Alexander Winkler</a> </td>
+                                   <td> <a href="https://scholar.google.com/citations?user=V_qztpEAAAAJ&hl=en">Petr Kadlecek</a> </td>
+                                   <td> <a href="https://vlg.inf.ethz.ch/team/Prof-Dr-Siyu-Tang.html">Siyu Tang</a> </td>
+                                   <td> <a href="https://fbogo.github.io/">Federica Bogo</a> </td>
+                               </tr>
+                         </table>
+
+                        </div>
+                  </div>
+               </div>
+            </div>
+      </section>
+
+      <section id="contact" class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-10 mx-auto">
+	                <h2>Contact</h2>
+		            <br>For questions, please contact Siwei Zhang:<br><a href="mailto:siwei.zhang@inf.ethz.ch">siwei.zhang@inf.ethz.ch</a>
+               </div>
+            </div>
+         </div>
+      </section>
+
+
+
+
+
+      <!-- Footer -->
+      <footer class="py-5 bg-dark">
+         <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; VLG 2024</p>
+             <p style="text-align:right;font-size:small;" class="text-white">
+            template from <a href="https://neuralbodies.github.io/LEAP/index.html">LEAP</a>
+         </div>
+         <!-- /.container -->
+      </footer>
+      <!-- Bootstrap core JavaScript -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Plugin JavaScript -->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Custom JavaScript for this theme -->
+      <script src="js/scrolling-nav.js"></script>
+   </body>
+</html>

@@ -1,0 +1,210 @@
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+header {
+  padding: 154px 0 100px;
+}
+
+body {
+    font-family: 'Helvetica', serif;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 100px 0 20px;
+  }
+}
+
+h1 {
+  font-size: 4.5rem;
+  line-height: 5.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  line-height: 5.5rem;
+}
+
+.lead {
+  font-size: 1.10rem;
+  font-weight: 320;
+}
+
+.bg-light {
+  background-color: #FFFFFF !important;
+}
+
+
+section {
+  padding: 50px 0;
+}
+
+section.about-section .img-wide  {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+section.section-title-tc {
+    margin-bottom: 50px;
+}
+
+section.team-section {
+    padding-top: 100px;
+}
+
+
+section.team-section .img-profile-small  {
+    max-width: 15rem;
+    max-height: 15rem;
+    border: 10px solid rgba(255, 255, 255, 0.5);
+}
+
+section.team-section .text-description  {
+    max-width: 15rem;
+}
+
+a {
+  color:  #1772d0;
+}
+
+a:hover, a:focus, a:active {
+  color: #f09228;
+}
+
+.bg-dark {
+  background-color: #8EAFD1 !important;
+}
+
+.box {text-align: left;}
+.box a:first-child { margin-left: 0px; }
+.box {
+    display: inline-block;
+    height: 45px;
+    /*width: 70px;*/
+    margin-right: 20px;
+    margin-bottom:10px;
+    border-radius: 30px;
+    /*box-shadow: 0px 0px 2px 2px #DDE8FC;*/
+    padding: 7px 20px;
+    background-color: #DDE8FC;
+    /*font-weight: bold;*/
+    text-align: center;
+}
+.box:hover {
+      background-color:#FEEAB3;
+      transition: 0.5s;
+  }
+
+#team .card {
+    border: none;
+    background: #f8f9fa;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 280px;
+}
+
+
+@media(min-width:960px) {
+    .frontside .card,
+    .backside .card {
+        min-height: 280px;
+        min-width: 205px;
+        max-width: 205px;
+    }
+}
+
+
+
+.backside .card a {
+    font-size: 18px;
+    color: #000000 !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #000000 !important;
+}
+
+.frontside .card .card-body img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
